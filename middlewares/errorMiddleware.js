@@ -24,7 +24,7 @@ export const registerController = async (req, res) => {
     const existingUser = await userModel.findOne({ email });
     if (existingUser) {
       return res
-        .status(400)
+        .status(200)
         .send({ success: false, message: "email already exists" });
     }
     const user = await userModel.create({ name, email, password });
